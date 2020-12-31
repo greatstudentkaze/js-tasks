@@ -18,6 +18,12 @@ const task1 = () => {
   console.log(trueString === result);
 };
 
+/*
+Задача из собеседования.
+
+Напишите функцию сложения вида add(num1)(num2)...
+Примечание: Количество слагаемых (num1, num2...) не ограничено.
+ */
 const task2 = () => {
   const add = (...args) => {
     let sum = args.reduce((acc, arg) => acc + arg, 0);
