@@ -17,3 +17,25 @@ const task1 = () => {
 
   console.log(trueString === result);
 };
+
+const task2 = () => {
+  const add = (...args) => {
+    let sum = args.reduce((acc, arg) => acc + arg, 0);
+    const func = (...args) => {
+      if (args.length) {
+        sum += args.reduce((acc, arg) => acc + arg, 0);
+        return func;
+      } else {
+       return sum;
+      }
+    };
+    return func;
+  };
+
+  const result1 = add(2)(1)(2)();
+  const result2 = add(2)(1,2)();
+  const result3 = add(1, 1, 3)();
+  console.log(5 === result1);
+  console.log(5 === result2);
+  console.log(5 === result3);
+};
