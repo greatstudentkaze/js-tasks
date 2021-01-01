@@ -45,3 +45,15 @@ const task2 = () => {
   console.log(5 === result2);
   console.log(5 === result3);
 };
+
+/*
+Простенькая задачка из собеседования.
+
+Превратите функцию ниже в IIFE.
+let result = (a, b) => a + b;
+ */
+const task3 = () => {
+  const result = (a, b) => a + b;
+
+  console.log(result(4, 8) === ((a, b) => a + b)(4, 8));
+};
