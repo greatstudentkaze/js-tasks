@@ -57,3 +57,31 @@ const task3 = () => {
 
   console.log(result(4, 8) === ((a, b) => a + b)(4, 8));
 };
+
+/*
+Задача из собеседования.
+
+Прежде, чем вы начнёте - самое популярное предполагаемое решение этой задачки - неправильное и не приводит к желанному результату.
+
+Напишите функцию, которая будет проходить через массив целых чисел и выводить индекс каждого элемента с задержкой в 3 секунды.
+ */
+const task4 = () => {
+  const array = [5, 4, 3, 2, 7, 4, 2, 1, 7];
+
+  // const func = array => {
+  //   array.forEach((item, i) => {
+  //     const itemNumber = i + 1;
+  //     setTimeout(() => console.log(i), 3000 * itemNumber);
+  //   });
+  // };
+
+  const func = async array => {
+    for (let i = 0; i < array.length; i++) {
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      console.log(i);
+    }
+  };
+
+  func(array)
+    .catch(err => console.error(err));
+};
