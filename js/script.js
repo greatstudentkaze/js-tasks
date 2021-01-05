@@ -85,3 +85,15 @@ const task4 = () => {
   func(array)
     .catch(err => console.error(err));
 };
+
+/*
+Реализуйте каррирование (англ. currying).
+ */
+const task5 = () => {
+  const addBase = base => num => base + num;
+
+  const addTen = addBase(10);
+  console.log(addTen(5) === 15);
+  console.log(addTen(80) === 90);
+  console.log(addTen(-5) === 5);
+};
